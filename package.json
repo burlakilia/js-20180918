@@ -4,7 +4,7 @@
   "description": "Stundes catalog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "static ./"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/burlakilia/js-20180918/issues"
   },
-  "homepage": "https://github.com/burlakilia/js-20180918#readme"
+  "homepage": "https://github.com/burlakilia/js-20180918#readme",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
 }
