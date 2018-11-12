@@ -3,43 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Button</title>
-
+    <link href="scss/style.css" rel="stylesheet">
     <link href="item-sh.css" rel="stylesheet"/>
+    <script src="./array.js"></script>
     <script src="item-sh.js"></script>
 </head>
 <body>
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-          
-          let item1 = new Item({
-            el: document.querySelector('.items'),
-            options: {
-              type: 'Man',
-              price: 'order now',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique suscipit facilis praesentium perferendis sunt culpa adipisci inventore quis laboriosam hic, doloremque, voluptatem earum placeat possimus architecto expedita impedit fuga explicabo!',
-              avatar: './img/common/reid-avatar.png'
-            }
-          });
+        for (let i = 0; i < options.length; i++){  
+          let optionsElement = options[i];
+        console.log(optionsElement.type);
+          let item = new Item({el: document.querySelector('.product-container'), optionsElement});
 
-          item1.render();
-
-           let item2 = new Item({
-            el: document.querySelector('.items'),
-            options: {
-              type: 'Another Man',
-              price: 'order now',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique suscipit facilis praesentium perferendis sunt culpa adipisci inventore quis laboriosam hic, doloremque, voluptatem earum placeat possimus architecto expedita impedit fuga explicabo!',
-              avatar: './img/common/andrew-avatar.png'
-            }
-          });
-
-          item2.render();
+          item.render();
+        }
 
         });
 
     </script>
-<div class="items"></div>
-</div>
+<ul class="product-container"></ul>
+
 
 
 </body>

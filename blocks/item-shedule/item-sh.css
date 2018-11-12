@@ -93,7 +93,11 @@
 
 .button-active{
     width: 200px;
-    background: rgb(66, 184, 120);;
-
+    background: rgb(66, 184, 120);
 
 }
+
+li {
+    list-style-type: none;
+}
+
