@@ -1,0 +1,11 @@
+.products {
+    padding: 5px;
+
+    &__item {
+        color: cadetblue;
+
+        &_active {
+            color: black;
+        }
+    }
+}

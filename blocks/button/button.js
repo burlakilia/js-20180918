@@ -1,22 +1,18 @@
-(function () {
-  'use strict';
+import { Component } from '../component';
+import _ from './button.scss';
 
-  class Button {
+export class Button extends Component {
 
-    constructor({el, options}) {
-      this.el = el;
-      this.options = options;
-    }
+  constructor(data) {
+    super(data)
+  }
 
-    render() {
+  render() {
 
-      this.el.innerHTML = `
-        <button class="button">${this.options.text}</button>
-      `;
-
-    }
+    this.el.innerHTML = `
+      <button class="button button_inactive">1234 ${this.options.text}</button>
+    `;
 
   }
 
-  window.Button = Button;
-})();
+}
