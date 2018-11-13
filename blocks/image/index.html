@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Button</title>
+
+    <link href="image.css" rel="stylesheet"/>
+    <script src="image.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            let image = new ImageWrapper({
+                el: document.querySelector('.js-playground'),
+                options: {
+                    src: 'https://via.placeholder.com/800x600.png?text=Product Image',
+                    defaultImgSrc: 'https://via.placeholder.com/400x300.png?text=Default Image',
+                    loadingText: 'Загрузка...',
+                    errorText: 'Ошибка загрузки',
+                    altText: 'Изображение продукта',
+                    width: 400,
+                    height: 300
+                }
+            });
+            image.render();
+        });
+    </script>
+
 </head>
 <body>
-$END$
+
+<div class="js-playground"></div>
+
 </body>
 </html>
