@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Button</title>
+    <title>Image Wrapper</title>
 
-    <link href="image.css" rel="stylesheet"/>
-    <script src="image.js"></script>
+    <script src="../../dist/bundle.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-            let image = new ImageWrapper({
+            let image = new window.ImageWrapper({
                 el: document.querySelector('.js-playground'),
                 options: {
                     src: 'https://via.placeholder.com/800x600.png?text=Product Image',
@@ -28,7 +27,7 @@
 </head>
 <body>
 
-<div class="js-playground"></div>
+<div class="js-playground" style="height: 300px; width: 400px;"></div>
 
 </body>
 </html>

@@ -1,0 +1,19 @@
+.imageWrapper {
+
+    &__imageText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        
+        &__hidden {
+            display: none;
+        }
+    }
+    
+    &__image {
+        &__hidden {
+            display: none;
+        }
+    }
+}
