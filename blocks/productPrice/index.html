@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Price</title>
+
+    <script src="../../dist/bundle.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            let price = new window.ProductPrice({
+                el: document.querySelector('.js-playground'),
+                options: {
+                    price: 10000,
+                    currency: 'р.'
+                }
+            });
+            price.render();
+        });
+    </script>
+
+</head>
+<body>
+
+<div class="js-playground" style="height: 300px; width: 400px;"></div>
+
+</body>
+</html>
