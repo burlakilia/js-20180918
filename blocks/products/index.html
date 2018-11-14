@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Button</title>
+    <title>Products</title>
 
     <script src="../../dist/bundle.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-          let button = new window.Button({
+          let button = new window.Products({
             el: document.querySelector('.js-playground'),
             options: {
-              text: 'Заказать'
+              items: [{
+                title: 'Xbox 360',
+                desc: 'Игровая приствка'
+              }, {
+                title: 'Nintendo Swtich',
+                desc: 'Гибридная'
+              }, {
+                title: 'Playstation 4',
+                desc: 'Игровая'
+              }]
             }
           });
 
