@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Wrapper</title>
+
+    <script src="../../dist/bundle.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            let image = new window.ProductDescription({
+                el: document.querySelector('.js-playground'),
+                options: {
+                    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit mauris libero et posuere scelerisque tempor malesuada, a congue suspendisse integer habitasse in fringilla sagittis pretium cubilia nibh cras. Turpis tristique mauris augue dictumst ad a taciti, ultrices dapibus facilisi quis pretium tempus fermentum ut, nisi aliquet sagittis vestibulum facilisis et. Justo mi ut nunc ante euismod mollis fringilla scelerisque lectus, congue pulvinar turpis sociis inceptos eros est phasellus neque, nostra tellus ac auctor vehicula magna vitae curae.\n" +
+                            "\n" +
+                            "Feugiat sapien tristique tempor augue faucibus purus mollis id cursus hac, orci dis blandit accumsan neque etiam porta lacinia ultrices, conubia in suspendisse ullamcorper dictumst commodo habitant felis libero. Potenti a magna duis primis mattis molestie maecenas urna nullam, placerat et sociosqu turpis rhoncus gravida ligula viverra, enim risus tempor integer nascetur felis habitasse semper. Eu commodo est nisl posuere tempus nulla elementum, quis morbi egestas mauris eget pellentesque, aliquam suspendisse iaculis fusce sociis suscipit."
+                }
+            });
+            image.render();
+        });
+    </script>
+
+</head>
+<body>
+
+<div class="js-playground" style="height: 300px; width: 400px;"></div>
+
+</body>
+</html>
