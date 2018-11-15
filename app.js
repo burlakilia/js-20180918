@@ -5,6 +5,7 @@ import { ProductDescription} from "./blocks/productDescription/productDescriptio
 import { ProductPrice} from "./blocks/productPrice/productPrice";
 import { ProductCard} from "./blocks/productCard/productCard";
 import { Main } from "./blocks/main/main";
+import {Events, ProductSelectedEventArgs} from "./core/events";
 
 window.Button = Button;
 window.Products = Products;
@@ -13,3 +14,6 @@ window.ProductDescription = ProductDescription;
 window.ProductPrice = ProductPrice;
 window.ProductCard = ProductCard;
 window.Main = Main;
+
+window.Events = Events;
+window.ProductSelectedEventArgs = ProductSelectedEventArgs;

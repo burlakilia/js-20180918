@@ -10,8 +10,10 @@ export class ImageWrapper extends Component {
 
     render() {
         this.el.innerHTML = template(this.options);
-
         const textElement = this.el.querySelector(".imageWrapper__imageText");
+        textElement.setAttribute('width', this.options.width);
+        textElement.setAttribute('height', this.options.height);
+        
         const imageElement = this.el.querySelector(".imageWrapper__image");
         imageElement.setAttribute('alt', this.options.altText);
         imageElement.setAttribute('width', this.options.width);
