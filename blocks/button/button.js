@@ -1,5 +1,6 @@
 import { Component } from '../component';
 import _ from './button.scss';
+import template from "../button/button.pug";
 
 export class Button extends Component {
 
@@ -8,11 +9,6 @@ export class Button extends Component {
   }
 
   render() {
-
-    this.el.innerHTML = `
-      <button class="button button_inactive pure-button">${this.options.text}</button>
-    `;
-
+      this.el.innerHTML = template(this.options);
   }
-
 }
