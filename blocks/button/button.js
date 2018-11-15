@@ -10,7 +10,7 @@ export class Button extends Component {
   render() {
 
     this.el.innerHTML = `
-      <button class="button button_inactive">${this.options.text}</button>
+      <button class="button button_inactive pure-button">${this.options.text}</button>
     `;
 
   }
