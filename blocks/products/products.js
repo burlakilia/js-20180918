@@ -7,12 +7,13 @@ export class Products extends Component {
     super(data);
 
     this.el.addEventListener('click', () => {
-      console.log('21345');
-    })
+      this.onItemClick();
+    });
   }
 
-  render() {
-    this.el.innerHTML = template(this.options);
+  render(data) {
+    this.el.innerHTML = template(data);
   }
 
+  onItemClick() {}
 }
