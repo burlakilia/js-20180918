@@ -1,4 +1,10 @@
 ul.products
-    each item in items
+    each item in products
         li.products__item
-            p #{item.title} : #{item.desc}
+            div.products__item-img-wrapper
+                img(class="products__item-img" src=item.picture)
+            div.products__item-description-wrapper
+                p.products__item-name #{item.name}
+                p.products__item-price #{item.price}
+                p.products__item-comment #{item.comment}
+                p.products__item-description #{item.description}
