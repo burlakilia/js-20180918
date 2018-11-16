@@ -2,7 +2,7 @@
    
   
    
-.product-item {
+.card {
  
   visibility: visible;
   width: 400px;
@@ -15,30 +15,49 @@
   transition: .4s linear;
 }
 
-.product-img img {
+.card__image img {
   display: block;
   width: 100%;
 }
-.product-list {margin-top: 15px;}
-.product-list h3 {
+.card__list {margin-top: 15px;}
+.card__name  {
+  text-align: center;
   font-weight: 700;
   color: black;
   margin: 0;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 20px;
   line-height: 2;
 }
-.price {
-  color: #E34D38;
-  display: block;
-  margin-bottom: 5px;
+.card__coment{
+  font-size: 15px;
 }
 
+.card__descr{font-size: 13px}
 
+.card__price {
+  color: blue;
+  display: block;
+  margin-bottom: 5px;
 
+}
+
+.card__button {
+  text-decoration: none;
+  display:block;
+  padding:  10px 20px;
+  background: #323232;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 28px;
+  transition: .3s ease-in;
+  text-align:  center;
+
+}
 
  .js-playground{
   width:420px;
-  height:750px;
-  border: 2px solid #3D64F3;
+  height:650px;
+  border: 2px solid #323232;
  }
