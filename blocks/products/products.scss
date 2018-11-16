@@ -1,11 +1,36 @@
 .products {
-    padding: 5px;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
 
-    &__item {
-        color: cadetblue;
+.products__item {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #000;
+    border-bottom: none;
+    padding: 10px;
+    transition: background-color .2s ease;
 
-        &_active {
-            color: black;
-        }
+    &:last-child {
+        border-bottom: 1px solid #000;
     }
+
+    &:hover {
+        background-color: #ccc;
+    }
+}
+
+.products__item-img-wrapper {
+    width: 48%;
+}
+
+.products__item-img {
+    max-width: 100%;
+}
+
+.products__item-description-wrapper {
+    width: 48%;
 }
