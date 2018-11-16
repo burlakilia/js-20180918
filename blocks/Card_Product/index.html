@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+
+    <link href="Card_Product.css" rel="stylesheet"/>
+    <script src="Card_Product.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+          let card = new Card({
+            el: document.querySelector('.js-playground'),
+            options: {
+              text: 'Заказать'
+            }
+          });
+          card.render();
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="js-playground"></div>
+
+</body>
+</html>
