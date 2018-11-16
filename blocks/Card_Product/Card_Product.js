@@ -27,5 +27,5 @@
 
   }
 
-  window.Button = Card;
+  window.Card = Card;
 })();

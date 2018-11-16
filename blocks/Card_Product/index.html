@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Button</title>
+    <title>Card</title>
 
     <link href="Card_Product.css" rel="stylesheet"/>
     <script src="Card_Product.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-          let Card = new Button({
+          let card = new Card({
             el: document.querySelector('.js-playground'),
             options: {
               text: 'Заказать'
             }
           });
-          Card.render();
+          card.render();
         });
     </script>
 
