@@ -8,13 +8,12 @@ export class Products extends Component {
     super(data);
 
     this.el.addEventListener('click', () => {
-      this.onItemClick();
-    });
+      console.log('21345');
+    })
   }
 
-  render(data) {
-    this.el.innerHTML = template(data);
+  render() {
+    this.el.innerHTML = template(this.options);
   }
 
-  onItemClick() {}
 }
