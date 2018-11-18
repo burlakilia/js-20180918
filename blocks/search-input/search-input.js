@@ -1,38 +1,35 @@
-(function () {
-  'use strict';
+'use strict';
 
-  class SearchInput {
+import { Component } from '../component';
 
-    constructor({el, options}) {
-      this.el = el;
-      this.options = options || {};
-    }
+export class SearchInput extends Component {
 
-    render() {
-
-      let { 
-        ariaLabel = "Search through catalog", 
-        placeHolder = "Search"
-       } = this.options;
-
-      this.el.innerHTML = `
-        <div class="catalog-search">
-          <input type="search" class="search-input" aria-label="${ariaLabel}" placeholder="${placeHolder}"></input>
-        </div>
-      `;
-
-      this.input = this.el.querySelector("input");
-
-      this.input.addEventListener("input", e => fireSearchEvent(this.input));
-
-      function fireSearchEvent(el) {
-
-        let searchEvent = new CustomEvent("search", { detail: el.value, bubbles: true, cancelable: true });
-        el.dispatchEvent(searchEvent);
-      }
-    }
-
+  constructor(data) {
+    super(data);
   }
 
-  window.SearchInput = SearchInput;
-})();
+  render() {
+
+    let { 
+      ariaLabel = "Search through catalog", 
+      placeHolder = "Search"
+      } = this.options;
+
+    this.el.innerHTML = `
+      <div class="catalog-search">
+        <input type="search" class="search-input" aria-label="${ariaLabel}" placeholder="${placeHolder}"></input>
+      </div>
+    `;
+
+    this.input = this.el.querySelector("input");
+
+    this.input.addEventListener("input", e => fireSearchEvent(this.input));
+
+    function fireSearchEvent(el) {
+
+      let searchEvent = new CustomEvent("search", { detail: el.value, bubbles: true, cancelable: true });
+      el.dispatchEvent(searchEvent);
+    }
+  }
+
+}
