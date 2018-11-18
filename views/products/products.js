@@ -39,6 +39,8 @@ export class ProductsView extends View{
             imageSrc: "https://via.placeholder.com/800x600.png?text=Product3 Image"
         }
     ];
+    
+    this.currentProduct = this.products[0];
 
     this.productsBlock = new Products({
       el: document.querySelector('.js-products')
@@ -52,13 +54,16 @@ export class ProductsView extends View{
     });
 
     this.productsBlock.render({items: this.products});
-
-    this.card.render(this.products[0]);
-
     this.productsBlock.onItemClick =  (index) => {
         console.log(`view element ${index} clicked`);
-        this.card.render(this.products[index]);
+        this.currentProduct = this.products[index];
+        this.card.render(this.currentProduct);
     };
+
+    this.card.render(this.currentProduct);
+    this.card.onPurchaseButtonClick = () => {
+        console.log('purchase button clicked');
+    }
   }
 
   render() {

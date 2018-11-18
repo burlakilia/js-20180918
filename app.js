@@ -1,5 +1,5 @@
 import { Products } from './blocks/products/products';
-import { ImageWrapper } from "./blocks/imageWrapper/imageWrapper";
+import { ImageWrapper } from "./blocks/image-wrapper/image-wrapper";
 import { ProductCard} from "./blocks/product-card/product-card";
 import { Events, ProductSelectedEventArgs } from "./core/events";
 import { Router } from './router';

@@ -1,6 +1,6 @@
 import { Component } from '../component';
-import template from './imageWrapper.pug';
-import _ from './imageWrapper.scss';
+import template from './image-wrapper.pug';
+import _ from './image-wrapper.scss';
 
 export class ImageWrapper extends Component {
 
