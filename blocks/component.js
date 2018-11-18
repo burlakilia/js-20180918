@@ -5,10 +5,6 @@ export class Component {
     this.options = options;
   }
 
-  toggleMod() {
-    console.log(1234);
-  }
-
 }
 
 

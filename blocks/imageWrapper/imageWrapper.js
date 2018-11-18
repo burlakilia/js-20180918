@@ -4,18 +4,14 @@ import _ from './imageWrapper.scss';
 
 export class ImageWrapper extends Component {
 
-    constructor(data) {
-        super(data);
-    }
-
-    render() {
-        this.el.innerHTML = template(this.options);
+    render(data) {
+        this.el.innerHTML = template(data);
         const textElement = this.el.querySelector(".imageWrapper__imageText");
         textElement.setAttribute('width', this.options.width);
         textElement.setAttribute('height', this.options.height);
         
         const imageElement = this.el.querySelector(".imageWrapper__image");
-        imageElement.setAttribute('alt', this.options.altText);
+        imageElement.setAttribute('alt', data.altText);
         imageElement.setAttribute('width', this.options.width);
         imageElement.setAttribute('height', this.options.height);
 
@@ -30,7 +26,7 @@ export class ImageWrapper extends Component {
         imageElement.addEventListener('load', () => {
             showTextOrImage(false);
         });
-        imageElement.src = this.options.src;
+        imageElement.src = data.src;
 
         // Если не загрузилось, пробуем загрузить картинку по умолчанию. Не загрузилась и она - показываем текст ошибки
         let fallBackCall = false;

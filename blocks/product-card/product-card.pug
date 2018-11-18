@@ -1,3 +1,10 @@
-p.product-card
-    h5.product-card__title #{title}
-    span #{desc}
+div.productCard
+    div.productCard__image
+    div
+        button.productCard__button.pure-button
+            = 'Заказать'
+        div.productCard__productPrice
+            span #{price} 
+            span #{currency}
+    div.productCard__productDescription
+        p #{description}
