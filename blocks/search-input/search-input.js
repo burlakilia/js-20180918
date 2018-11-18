@@ -1,6 +1,5 @@
-'use strict';
-
 import { Component } from '../component';
+import style from './search-input.scss';
 
 export class SearchInput extends Component {
 
@@ -16,8 +15,8 @@ export class SearchInput extends Component {
       } = this.options;
 
     this.el.innerHTML = `
-      <div class="catalog-search">
-        <input type="search" class="search-input" aria-label="${ariaLabel}" placeholder="${placeHolder}"></input>
+      <div class="search-input">
+        <input type="search" class="search-input__input-field" aria-label="${ariaLabel}" placeholder="${placeHolder}"></input>
       </div>
     `;
 
@@ -31,5 +30,4 @@ export class SearchInput extends Component {
       el.dispatchEvent(searchEvent);
     }
   }
-
 }

@@ -1,6 +1,5 @@
-'use strict';
-
 import { Component } from '../component';
+import style from './product-card.scss';
 
 export class ProductCard extends Component {
 
