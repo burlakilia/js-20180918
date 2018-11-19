@@ -38,6 +38,14 @@ export class ProductsView extends View{
             price: 3000,
             currency: "р",
             imageSrc: "https://via.placeholder.com/800x600.png?text=Product3 Image"
+        },
+        {
+            id: 4,
+            title: "Фонарик",
+            description: "Фонарик и в Африке фонарик",
+            price: 200,
+            currency: "р",
+            imageSrc: "https://via.placeholder.com/800x600.png?text=Product4 Image"
         }
     ];
     
