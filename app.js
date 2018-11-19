@@ -20,8 +20,11 @@ function start() {
   router.register('products', productsView);
   router.register('orders', orderView);
   
+  if (!parent.location.hash)
+  {
+      parent.location.hash = 'products';
+  }
   router.start();
-  parent.location.hash = 'products';
 }
 
 window.addEventListener('DOMContentLoaded', start);

@@ -26,6 +26,7 @@ export class Router {
 
   start() {
     window.addEventListener('hashchange', () => this.onRouteChanged());
+    this.onRouteChanged();
   }
 
 

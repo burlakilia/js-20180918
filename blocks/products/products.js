@@ -15,7 +15,29 @@ export class Products extends Component {
       {
           return Math.floor(Math.random()*(max-min+1)+min);
       }
-      this.el.addEventListener('click', () => this.onItemClick(randomIntFromInterval(0, 2)));
+      this.el.addEventListener('click', (e) => {
+          if (!this.onItemClick) {
+              return;
+          }
+          const id = tryFindProductId(e.srcElement);
+          if (id){
+            this.onItemClick(id);
+          }
+      });
+      
+      function tryFindProductId(el) {
+          if (el.classList.contains('products__item')) {
+              const ids = el.id.split('-');
+              if (ids && ids.length > 1)
+              {
+                  return ids[1];
+              }
+              return;
+          }
+          if (el.parentElement) {
+              return tryFindProductId(el.parentElement);
+          }
+      }
   }
   
   onItemClick(itemIndex) {

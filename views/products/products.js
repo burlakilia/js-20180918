@@ -54,9 +54,9 @@ export class ProductsView extends View{
     });
 
     this.productsBlock.render({items: this.products});
-    this.productsBlock.onItemClick =  (index) => {
-        console.log(`view element ${index} clicked`);
-        this.currentProduct = this.products[index];
+    this.productsBlock.onItemClick = (id) => {
+        console.log(`Product id=${id} clicked`);
+        this.currentProduct = this.products.find(product => product.id === +id);
         this.card.render(this.currentProduct);
     };
 

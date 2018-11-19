@@ -1,4 +1,4 @@
 ul.products
     each item in items
-        li.products__item
+        li(class='products__item' id='product-' + item.id)
             p #{item.title}
