@@ -3,6 +3,7 @@ import { ProductCard } from '../../blocks/product-card/product-card';
 import { View } from '../view';
 import _ from './products.scss';
 import template from './products.pug';
+import {Search} from "../../blocks/search/search";
 
 export class ProductsView extends View{
 
@@ -42,6 +43,10 @@ export class ProductsView extends View{
     
     this.currentProduct = this.products[0];
 
+    this.search = new Search({
+        el: document.querySelector('.js-search')
+    });
+    
     this.productsBlock = new Products({
       el: document.querySelector('.js-products')
     });
@@ -66,6 +71,14 @@ export class ProductsView extends View{
         parent.location.hash = 'orders';
         // TODO: Dmitrii figure out how to pass parameters.
         //parent.location.hash = `orders?productId=${this.currentProduct.id}`
+    };
+    
+    this.search.render({});
+    const that = this;
+    this.search.onSearch = (query ) => {
+        console.log(`search for ${query}`);
+        const upperQuery = query.toLocaleUpperCase();
+        that.productsBlock.render({items: that.products.filter(product => product.title.toLocaleUpperCase().indexOf(upperQuery) !== -1)});
     }
   }
 
