@@ -6,13 +6,15 @@ import {ImageWrapper} from "../image-wrapper/image-wrapper";
 export class ProductCard extends Component {
     constructor(props) {
         super(props);
+        this.el.addEventListener('click', (e) => {
+            if (e.srcElement.classList.contains('productCard__button') && this.onPurchaseButtonClick) {
+                this.onPurchaseButtonClick();
+            }
+        })
     }
     
     render(data) {
         this.el.innerHTML = template(data);
-        const buttonElement = this.el.querySelector('.productCard__button');
-        buttonElement.addEventListener('click', () => this.onPurchaseButtonClick());
-        
         const imageElement = this.el.querySelector('.productCard__image');
         const image = new ImageWrapper({ el: imageElement, options: {
             loadingText: 'Загрузка...',

@@ -21,6 +21,7 @@ function start() {
   router.register('orders', orderView);
   
   router.start();
+  parent.location.hash = 'products';
 }
 
 window.addEventListener('DOMContentLoaded', start);
