@@ -11,7 +11,12 @@ export class Router {
 
   onRouteChanged() {
     let hash = location.hash.replace('#', '');
-    let view = this.routes[hash];
+    let viewName = hash;
+    const paramsIndex = hash.indexOf('?');
+    if (paramsIndex !== -1) {
+        viewName = hash.substring(0, paramsIndex);
+    }
+    let view = this.routes[viewName];
 
     if (this.current) {
       this.current.hide();

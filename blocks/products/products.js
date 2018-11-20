@@ -19,12 +19,7 @@ export class Products extends Component {
     
     function tryFindProductId(el) {
       if (el.classList.contains('products__item')) {
-          const ids = el.id.split('-');
-          if (ids && ids.length > 1)
-          {
-              return ids[1];
-          }
-          return;
+          return el.dataset.id;
       }
       if (el.parentElement) {
           return tryFindProductId(el.parentElement);

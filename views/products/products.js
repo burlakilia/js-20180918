@@ -76,9 +76,7 @@ export class ProductsView extends View{
     this.card.render(this.currentProduct);
     this.card.onPurchaseButtonClick = () => {
         console.log('purchase button clicked');
-        parent.location.hash = 'orders';
-        // TODO: Dmitrii figure out how to pass parameters.
-        //parent.location.hash = `orders?productId=${this.currentProduct.id}`
+        parent.location.hash = `orders?productId=${this.currentProduct.id}`
     };
     
     this.search.render({});
