@@ -7,11 +7,16 @@
     <style>
         .js-catalog {
             max-width: 1024px;
+            padding: 0 15px;
             margin: 35px auto 0;
         }
         h1 {
             border-bottom: 1px solid #999;
             padding: 0 0 5px;
+        }
+        .productCard .product__name {
+            font-size: 22px;
+            cursor: text;
         }
         .productCard__button {
             width: 100%;
@@ -29,13 +34,28 @@
         .imageWrapper__image {
             max-width: 100%;
         }
+        .js-search,
+        .js-products {
+            padding: 0 30px 0 0;
+        }
+        .search__input {
+            width: 100%;
+            max-width: 100%;
+        }
         .products {
             padding-left: 15px;
+        }
+        .product__name {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .js-products .product__description {
+            max-height: 36px;
+            overflow: hidden;
         }
     </style>
 
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-
 </head>
 <body>
     <div class="js-catalog">
