@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Catalog</title>
-	<style>
-	.page {
-	  height: 500px;
-	  width: 500px;
-	}
+    <script src="./dist/bundle.js"></script>
+    <style>
+        .js-catalog {
+            max-width: 1024px;
+            margin: 35px auto 0;
+        }
+        h1 {
+            border-bottom: 1px solid #999;
+            padding: 0 0 5px;
+        }
+        .productCard__button {
+            width: 100%;
+            margin: 0 0 15px;
+        }
+        .imageWrapper {
+            position: relative;
+            width: 95%;
+            max-width: initial;
+            height: auto;
+            max-height: initial;
+            display: block;
+            padding: 0 0 10px 0;
+        }
+        .imageWrapper__image {
+            max-width: 100%;
+        }
+        .products {
+            padding-left: 15px;
+        }
+    </style>
 
-	/*div { //5
-	  background: orange;
-	}*/
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 
-	/*#page { //2
-	  background: yellow;
-	}*/
-
-	/*.page { //3
-	  background: olive;
-	}*/
-
-	/*#page.page { //1
-	  background: green;
-	}*/
-
-	/*body * { //4
-	  background: indigo;
-	}*/
-	</style>
 </head>
 <body>
-    <h1>Hello world</h1>
-	<div id="page" class="page"></div>
+    <div class="js-catalog">
+        <h1>Catalog</h1>
+        <div class="js-products-view" hidden="hidden"></div>
+        <div class="js-order-view" hidden="hidden"></div>
+    </div>
 </body>
 </html>

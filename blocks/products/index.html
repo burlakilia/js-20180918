@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+
+    <script src="../../dist/bundle.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+          let button = new window.Products({
+            el: document.querySelector('.js-playground'),
+            options: {
+              items: [{
+                title: 'Xbox 360',
+                desc: 'Игровая приствка'
+              }, {
+                title: 'Nintendo Swtich',
+                desc: 'Гибридная'
+              }, {
+                title: 'Playstation 4',
+                desc: 'Игровая'
+              }]
+            }
+          });
+
+          button.render();
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="js-playground"></div>
+
+</body>
+</html>

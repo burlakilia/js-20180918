@@ -1,0 +1,22 @@
+.imageWrapper {
+    padding: 0 30px 10px 0;
+
+    &__imageText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        
+        &__hidden {
+            display: none;
+        }
+    }
+    
+    &__image {
+        &__hidden {
+            display: none;
+        }
+    }
+}
