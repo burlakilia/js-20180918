@@ -8,12 +8,15 @@ export class Products extends Component {
     const that = this;
 
     this.el.addEventListener('click', (e) => {
-      if (!this.onItemClick) {
-          return;
-      }
       const id = tryFindProductId(e.srcElement);
-      if (id){
-        this.onItemClick(id);
+      if (id) {
+        // Set active
+        for (const itemElem of this.el.querySelectorAll('.products__item')) {
+          itemElem.classList.toggle('products__item_selected', itemElem.dataset.id === id)
+        }
+        if (this.onItemClick) {
+            this.onItemClick(id);
+        }
       }
     });
     
