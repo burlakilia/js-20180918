@@ -18,18 +18,15 @@ export class ProductCard extends Component {
         const imageElement = this.el.querySelector('.productCard__image');
         const image = new ImageWrapper({ el: imageElement, options: {
             loadingText: 'Загрузка...',
-            errorText: 'Ошибка загрузки',
-            width: 400,
-            height: 300}});
+            errorText: 'Ошибка загрузки'
+        }});
 
         image.render({
             src: data.imageSrc,
             defaultImgSrc: 'https://via.placeholder.com/400x300.png?text=Default Image',
             loadingText: 'Загрузка...',
             errorText: 'Ошибка загрузки',
-            altText: data.title,
-            width: 400,
-            height: 300
+            altText: data.title
         });
     }
 
