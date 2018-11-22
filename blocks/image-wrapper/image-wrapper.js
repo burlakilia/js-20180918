@@ -7,13 +7,13 @@ export class ImageWrapper extends Component {
     render(data) {
         this.el.innerHTML = template(data);
         const textElement = this.el.querySelector(".imageWrapper__imageText");
-        textElement.setAttribute('width', this.options.width);
-        textElement.setAttribute('height', this.options.height);
+        textElement.setAttribute('width', this.options.width || '');
+        textElement.setAttribute('height', this.options.height || '');
         
         const imageElement = this.el.querySelector(".imageWrapper__image");
         imageElement.setAttribute('alt', data.altText);
-        imageElement.setAttribute('width', this.options.width);
-        imageElement.setAttribute('height', this.options.height);
+        imageElement.setAttribute('width', this.options.width || '');
+        imageElement.setAttribute('height', this.options.height || '');
 
         function showTextOrImage(needShowText, text) {
             imageElement.classList.toggle("imageWrapper__image__hidden", needShowText);
