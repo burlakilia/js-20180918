@@ -15,37 +15,37 @@ export class ProductsView extends View{
     this.products = [
         {
             id: 1,
-            title: "Short Product Name",
-            description: "Lorem ipsum dolor sit amet consectetur adipiscing elit mauris libero et posuere scelerisque tempor malesuada, a congue suspendisse integer habitasse in fringilla sagittis pretium cubilia nibh cras. Turpis tristique mauris augue dictumst ad a taciti, ultrices dapibus facilisi quis pretium tempus fermentum ut, nisi aliquet sagittis vestibulum facilisis et. Justo mi ut nunc ante euismod mollis fringilla scelerisque lectus, congue pulvinar turpis sociis inceptos eros est phasellus neque, nostra tellus ac auctor vehicula magna vitae curae.\n" +
-                "\n" +
-                "Feugiat sapien tristique tempor augue faucibus purus mollis id cursus hac, orci dis blandit accumsan neque etiam porta lacinia ultrices, conubia in suspendisse ullamcorper dictumst commodo habitant felis libero. Potenti a magna duis primis mattis molestie maecenas urna nullam, placerat et sociosqu turpis rhoncus gravida ligula viverra, enim risus tempor integer nascetur felis habitasse semper. Eu commodo est nisl posuere tempus nulla elementum, quis morbi egestas mauris eget pellentesque, aliquam suspendisse iaculis fusce sociis suscipit.",
-            price: 1000,
+            title: "Смартфон iPhone X",
+            description: "Смартфон Apple iPhone X – воплощение статуса, надежности и передовых технологий. Большой, 5.8-дюймовый безрамочный экран дарит удивительно четкое и живое изображение (разрешение 2436x1125). Привычный поклонникам бренда интерфейс здесь дополнен такими возможностями, как бесконтактная оплата и зарядка, поддержка максимального количества диапазонов LTE.\n" +
+                "Камера Apple iPhone X стала 12-мегапиксельной, двойной, с 6-элементной линзой. Она позволяет снимать видео формата от HD до Ultra HD 4K и фото с разрешением 4032x3024. Дополнительные технологии улучшения качества, такие как расширенный цветовой диапазон, шумоподавление, улучшенный алгоритм местной тональной компрессии делают полученный материал безупречным. Творческие режимы, панорамная съемка, возможность фокусировки касанием, следящий автофокус позволяют максимально точно передать настроение, расставить нужные акценты и сделать это быстро и легко.\n",
+            price: 72999,
             currency: "р",
-            imageSrc: "https://via.placeholder.com/800x600.png?text=Product Image"
+            imageSrc: "https://c.dns-shop.ru/thumb/st4/fit/0/0/78839676ded0963fe3b743ca73800d84/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg"
         },
         {
             id: 2,
-            title: "Short Product Name 2",
-            description: "А это не такое длинное описание товара 2",
-            price: 2000,
+            title: '13.3" Ноутбук DELL XPS 13 9360',
+            description: "Ноутбук Dell XPS 13 отличается очень малыми размерами и небольшой массой. В нем используется технология Infinity Edge, которая позволяет уменьшить до минимума толщину рамок дисплея, сосредоточив внимание пользователя на изображении.",
+            price: 84999,
             currency: "р",
-            imageSrc: "https://via.placeholder.com/800x600.png?text=Product2 Image"
+            imageSrc: "https://c.dns-shop.ru/thumb/st1/fit/0/0/b19f4545c28810d1c716cb6bd4f87d6d/34cc23a0a140cd668f77507ea51851bd42f36b1d46d4d62cf983664d68670e8c.jpg"
         },
         {
             id: 3,
-            title: "Short Product Name 3",
-            description: "Совсем короткое описание товара 3",
-            price: 3000,
+            title: "Микроволновая печь LG MW23W35GIB черный",
+            description: "Микроволновая печь LG MW23W35GIB представлена в строгом дизайне и имеет немаркую черную расцветку, которая будет привлекать еще больше внимание к этому прибору на кухне. Оборудование обладает мощностью микроволн 1000 Вт, что обеспечивает равномерный и быстрый прогрев продуктов. Устройство весит 9.4 кг и обладает габаритами 47.6х27.2х34.6 см.\n" +
+                "Модель LG MW23W35GIB вмещает 23 л и дополняется удобным поддоном с диаметром 29.2 см. Стенки внутренней камеры покрыты специальной эмалью, обеспечивающей простоту очистки даже самых сложных загрязнений. Оборудование оснащено 22 автоматическими программами, функциями разморозки и подогрева, а также блокировкой от детей. Печь дополнена сенсорным управлением и удобным дисплеем с часами.",
+            price: 7999,
             currency: "р",
-            imageSrc: "https://via.placeholder.com/800x600.png?text=Product3 Image"
+            imageSrc: "https://c.dns-shop.ru/thumb/st1/fit/wm/2000/1096/e63570fd14b4ec2ba8a37181523eb4d3/75678853726240f32bc4bf022fae02bafe4356b9ef4f249049f669a743b089da.jpg"
         },
         {
             id: 4,
-            title: "Фонарик",
-            description: "Фонарик и в Африке фонарик",
-            price: 200,
+            title: "Часы настенные Centek СТ-7103",
+            description: "Centek СТ-7103 настенные часы с надежным колебательным кварцевым механизмом. Долгая работа без подзавода.",
+            price: 199,
             currency: "р",
-            imageSrc: "https://via.placeholder.com/800x600.png?text=Product4 Image"
+            imageSrc: "https://c.dns-shop.ru/thumb/st1/fit/wm/1996/2000/3de41e3a0faef1213fe6300069c460a8/a55d77751bddbc6cc9cc3e414208bd1dc328e88fa8b81ffc11ec575e95ef3ea6.jpg"
         }
     ];
     

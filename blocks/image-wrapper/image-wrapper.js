@@ -24,6 +24,7 @@ export class ImageWrapper extends Component {
         showTextOrImage(true, this.options.loadingText);
         // Картинка загрузилась - убираем текст, показываем картинку
         imageElement.addEventListener('load', () => {
+            //window.setTimeout(() => showTextOrImage(false), 5000);
             showTextOrImage(false);
         });
         imageElement.src = data.src;
