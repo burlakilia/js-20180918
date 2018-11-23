@@ -10,19 +10,26 @@ export class Products extends Component {
     this.el.addEventListener('click', (e) => {
       const id = tryFindProductId(e.srcElement);
       if (id) {
-        // Set active
-        for (const itemElem of this.el.querySelectorAll('.products__item')) {
-          itemElem.classList.toggle('products__item_selected', itemElem.dataset.id === id)
-        }
         if (this.onItemClick) {
             this.onItemClick(id);
         }
+        // Set active
+        setActiveProduct(this.el, id);        
       }
     });
+    setActiveProduct(this.el, +data.selectedProductId);
+    
+    function setActiveProduct(el, selectedId) {
+        if (selectedId) {
+            for (const itemElem of el.querySelectorAll('.products__item')) {
+                itemElem.classList.toggle('products__item_selected', +itemElem.dataset.id === selectedId)
+            }
+        }
+    }
     
     function tryFindProductId(el) {
       if (el.classList.contains('products__item')) {
-          return el.dataset.id;
+          return +el.dataset.id;
       }
       if (el.parentElement) {
           return tryFindProductId(el.parentElement);

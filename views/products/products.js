@@ -66,7 +66,7 @@ export class ProductsView extends View{
         }
     });
 
-    this.productsBlock.render({items: this.products});
+    this.productsBlock.render({items: this.products, selectedProductId: this.currentProduct ? this.currentProduct.id : undefined});
     this.productsBlock.onItemClick = (id) => {
         console.log(`Product id=${id} clicked`);
         this.currentProduct = this.products.find(product => product.id === +id);
@@ -84,7 +84,7 @@ export class ProductsView extends View{
     this.search.onSearch = (query ) => {
         console.log(`search for ${query}`);
         const upperQuery = query.toLocaleUpperCase();
-        that.productsBlock.render({items: that.products.filter(product => product.title.toLocaleUpperCase().indexOf(upperQuery) !== -1)});
+        that.productsBlock.render({items: that.products.filter(product => product.title.toLocaleUpperCase().indexOf(upperQuery) !== -1), selectedProductId: this.currentProduct ? this.currentProduct.id : undefined});
     }
   }
 
