@@ -1,4 +1,14 @@
-ul.products
-    each item in items
-        li.products__item
-            p #{item.title} : #{item.desc}
+- let items = locals;
+
+ul.product-container
+	each item, index in items
+			li
+				- let divAttributes = {'class': 'item pure-g', 'data-number': index }
+				div&attributes(divAttributes)
+					div.pure-u
+						- let imgAttributes = {'src': item.avatar, 'class': 'avatar'}
+						img&attributes(imgAttributes)
+					div.item-body
+						h4.type #{item.type} 
+						p.description #{item.desc}
+					button.button-order #{item.price}

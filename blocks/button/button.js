@@ -1,5 +1,6 @@
 import { Component } from '../component';
 import _ from './button.scss';
+import __ from '../product-card/product-card.pug'
 
 export class Button extends Component {
 

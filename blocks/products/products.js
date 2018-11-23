@@ -5,7 +5,8 @@ export class Products extends Component {
 
   constructor(data) {
     super(data);
-
+    this.el = data.el;
+    console.log(this.el);
     this.el.addEventListener('click', () => {
       this.onItemClick();
     });
