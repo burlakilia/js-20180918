@@ -1,6 +1,4 @@
 .imageWrapper {
-    padding: 0 30px 10px 0;
-
     &__imageText {
         display: flex;
         align-items: center;
@@ -13,10 +11,25 @@
             display: none;
         }
     }
-    
-    &__image {
-        &__hidden {
-            display: none;
-        }
+
+    .imageWrapper {
+        position: relative;
+        width: 95%;
+        max-width: initial;
+        height: 400px;
+        max-height: initial;
+        display: flex;
+        padding: 0 0 25px 0;
+        overflow: hidden;
+        
+        &__image {
+            width: 100%;
+            object-fit: contain;
+            max-height: 100%;
+
+            &__hidden {
+                display: none;
+            }            
+        }        
     }
 }
