@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link href="scss/style.css" rel="stylesheet">
+    <link href="item-sh.css" rel="stylesheet"/>
+    <script src="../array.js"></script>
+    <script src="item-sh.js"></script>
+</head>
+<body>
+
+<div class="search-container">
+                <input class="search" type="text" >
+            </div>
+
+
+
+<script async="async">
+let search = document.querySelector(".search");
+  let arrayAfterSearch = [];
+
+  search.addEventListener('input', function getChar(e) {
+        
+    arrayAfterSearch.length = '';
+    
+    search.placeholder='search ...';
+    
+    for (let i = 0; i < options.length; i++){
+        let value = search.value;
+        value = value.toLowerCase();
+
+        let searchWord = options[i].type;
+        let firstLetter = searchWord.indexOf(value);
+
+
+let re = new RegExp('^'+value+' +| +'+value+' +| +'+value+'$', 'i'); 
+let indexResult = firstLetter.search(re);
+        console.log(indexResult);
+
+
+      if(~firstLetter) {
+
+        arrayAfterSearch.push(options[i]);
+        search.placeholder = searchWord;
+
+      } 
+    };
+
+console.log(arrayAfterSearch);
+});
+
+
+
+</script>
+</body>
+</html>
+
+
+
+

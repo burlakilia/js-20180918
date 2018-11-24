@@ -1,0 +1,35 @@
+- let items = locals;
+
+- console.log(items)
+ul.product-container
+	each item in items
+	li
+		div.pure-g
+			div.pure-u
+				div.item-body
+					h4.type
+					p.description
+				button.button-order #${item.price}
+
+
+
+
+
+				//- p #{item.type} : #{item.desc}
+
+
+				//- <div class="item pure-g">
+    //-                 <div class="pure-u"></div>
+    //-                 <div class="item-body"><h4 class="type"></h4>
+    //-                 <p class="description"></p></div>
+    //-                 <button class="button-order">${this.price}</button></div>`
+
+
+//- div.item pure-g
+//- 	div.pure-u
+//- 	div.item-body
+//- 		h4.type
+//- 		p.description
+//- 	button.button-order #${item.price}
+
+

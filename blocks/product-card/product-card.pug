@@ -1,3 +1,14 @@
-p.product-card
-    h5.product-card__title #{title}
-    span #{desc}
+- let items = locals;
+
+header.product-header
+	div.product-image
+		- let imgAttributes = {'src': items.item.avatar, 'class': 'avatar'}
+		img&attributes(imgAttributes)
+
+	div.flex-conteiner
+		p.price #{item.price}
+
+section.product-desription
+	p.product-card
+		h2.product-card__title #{item.type}
+		p #{item.desc}
