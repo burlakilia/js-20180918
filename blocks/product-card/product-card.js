@@ -22,11 +22,11 @@ export class ProductCard extends Component {
         }});
 
         image.render({
-            src: data.imageSrc,
+            src: data.picture,
             defaultImgSrc: 'https://via.placeholder.com/400x300.png?text=Default Image',
             loadingText: 'Загрузка...',
             errorText: 'Ошибка загрузки',
-            altText: data.title
+            altText: data.name
         });
     }
 
