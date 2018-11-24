@@ -1,6 +1,7 @@
 import { Component } from '../component';
 import _ from './product-card.scss';
 import template from './product-card.pug';
+import emptyTemplate from './product-card.pug';
 import {ImageWrapper} from "../image-wrapper/image-wrapper";
 
 export class ProductCard extends Component {
@@ -14,6 +15,11 @@ export class ProductCard extends Component {
     }
     
     render(data) {
+        if (!data) {
+            this.el.innerHTML = emptyTemplate(data);
+            return;
+        }
+
         this.el.innerHTML = template(data);
         const imageElement = this.el.querySelector('.productCard__image');
         const image = new ImageWrapper({ el: imageElement, options: {
@@ -22,7 +28,7 @@ export class ProductCard extends Component {
         }});
 
         image.render({
-            src: data.picture,
+            src: data.picture || '',
             defaultImgSrc: 'https://via.placeholder.com/400x300.png?text=Default Image',
             loadingText: 'Загрузка...',
             errorText: 'Ошибка загрузки',

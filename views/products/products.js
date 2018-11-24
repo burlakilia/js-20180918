@@ -7,18 +7,18 @@ import {Search} from "../../blocks/search/search";
 import {ProductsApi} from "../../core/productsApi";
 
 export class ProductsView extends View {
-
     constructor(el) {
         super(el);
         this.render();
 
         this.products = [];
-        this.currentProduct = {};
+        this.currentProductGuid = undefined;
 
         this.search = new Search({
             el: document.querySelector('.js-search')
         });
-
+        this.search.render({});
+        
         this.productsBlock = new Products({
             el: document.querySelector('.js-products')
         });
@@ -27,53 +27,55 @@ export class ProductsView extends View {
             el: document.querySelector('.js-product-card'),
             options: {}
         });
+        this.card.render(undefined);
 
         this.productsBlock.onItemClick = (guid) => {
             console.log(`Product id=${guid} clicked`);
-            this.currentProduct = this.products.find(product => product.guid === guid);
+            this.currentProductGuid = guid;
             this.showProductDetails(guid);
-            //this.card.render(this.currentProduct);
         };
 
         this.card.onPurchaseButtonClick = () => {
             console.log('purchase button clicked');
-            parent.location.hash = `orders?productId=${this.currentProduct.id}`
+            parent.location.hash = `orders?productId=${this.currentProductGuid}`
         };
-
-        this.search.render({});
+        
         const that = this;
         this.search.onSearch = (query) => {
             console.log(`search for ${query}`);
             const upperQuery = query.toLocaleUpperCase();
             that.productsBlock.render({
                 items: that.products.filter(product => product.title.toLocaleUpperCase().indexOf(upperQuery) !== -1),
-                selectedProductId: this.currentProduct ? this.currentProduct.guid : undefined
+                selectedProductId: this.currentProductGuid
             });
-        }
+        };
 
         this.productsApi = new ProductsApi();
         this.productsApi.getProducts((products) => {
             this.products = JSON.parse(products);
-            if (this.products.length > 0) {
-                this.currentProduct = this.products[0];
-            }
+            this.currentProductGuid = this.products.length > 0 ? this.products[0].guid : undefined;
             this.productsBlock.render({
                 items: this.products,
-                selectedProductId: this.currentProduct ? this.currentProduct.guid : undefined
+                selectedProductId: this.currentProductGuid
             });
-            this.showProductDetails(this.currentProduct ? this.currentProduct.guid : undefined);
+            this.showProductDetails(this.currentProductGuid);
         }, () => {
             console.log("Error received!");
         });
 
+        // Show product card details.
         this.showProductDetails = function (guid) {
-            this.productsApi.getProductInfo(guid, (data) => {
-                const productData = JSON.parse(data);
-                this.card.render(productData);
-            }, () => {
-                console.log("Error received!");
-            });
-            console.log("Show product details " + guid);
+            if (guid) {
+                this.productsApi.getProductInfo(guid, (data) => {
+                    const productData = JSON.parse(data);
+                    this.card.render(productData);
+                }, () => {
+                    console.log("Error received!");
+                    this.card.render(undefined);
+                });
+            } else {
+                this.card.render(undefined);
+            }
         };
     }
 
@@ -81,14 +83,3 @@ export class ProductsView extends View {
         this.el.innerHTML = template();
     }
 }
-
-// export class Product {
-//     constructor() {
-//         this.id = 0;
-//         this.title = "";
-//         this.description = "";
-//         this.price = 0;
-//         this.currency = "";
-//         this.imageSrc = "";
-//     }
-// }

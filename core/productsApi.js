@@ -25,10 +25,12 @@ export class ProductsApi{
             const request = new XMLHttpRequest();
             request.open('GET', url);
             request.onreadystatechange = () => {
-                if(request.readyState === 4) {
-                    onSuccess(request.responseText);
-                } else {
-                    onError();
+                if (request.readyState === 4) {
+                    if (request.status === 200) {
+                        onSuccess(request.responseText);
+                    } else {
+                        onError();
+                    }
                 }
             };
 
