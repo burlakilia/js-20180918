@@ -24,8 +24,9 @@ export class ArrayAfterSearch {
 
     document.addEventListener('click', function (e){
       let item = e.target.closest('.item');
+      let button = e.target.closest('.button-order');
 
-      if(item) {
+      if(item && !button) {
       let array = self.search.newArray;
       self.selected = array[item.dataset.number];
       }

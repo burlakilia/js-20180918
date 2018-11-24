@@ -6,6 +6,7 @@ import { Router } from './router';
 import { ProductsView } from './views/products/products';
 import { OrderView } from './views/order/order';
 
+
 window.Button = Button;
 window.Products = Products;
 

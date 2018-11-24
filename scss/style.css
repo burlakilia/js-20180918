@@ -62,6 +62,10 @@
 }
 
 .button-order {
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-rendering: auto;
+
     width: 200px;
     height: 64px;
     color: #fff;

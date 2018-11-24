@@ -75,13 +75,15 @@ animation() {
 
       document.addEventListener('click', function (e){
       let item = e.target.closest('.item');
+      let button = e.target.closest('.button-order');
+
       let selected = document.querySelector('.item-selected');
 
-      if(item){
+      if(item && !button){
 
       if(selected){
         selected.classList.toggle('item-selected');
-        console.log(selected);
+
       };
 
       item.classList.toggle('item-selected');
@@ -94,13 +96,11 @@ animation() {
 
       document.addEventListener('click', function (e){
         
-
-        let button = event.target.closest('.button-order');
+        let button = e.target.closest('.button-order');
 
         if(button){
 
         let array = self.newArray;
-        console.log(array);
         
         let item = button.closest('.item');
         

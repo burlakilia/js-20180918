@@ -46,6 +46,8 @@ export class ProductsView extends View{
       }]
     );
 
+// selected item to product-card
+
   document.addEventListener('click', function (e){
     let item = e.target.closest('.item');
       let selected = document.querySelector('.item-selected');
