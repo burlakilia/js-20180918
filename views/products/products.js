@@ -18,7 +18,7 @@ export class ProductsView extends View {
             el: document.querySelector('.js-search')
         });
         this.search.render({});
-        
+
         this.productsBlock = new Products({
             el: document.querySelector('.js-products')
         });
@@ -39,7 +39,7 @@ export class ProductsView extends View {
             console.log('purchase button clicked');
             parent.location.hash = `orders?productId=${this.currentProductGuid}`
         };
-        
+
         const that = this;
         this.search.onSearch = (query) => {
             console.log(`search for ${query}`);

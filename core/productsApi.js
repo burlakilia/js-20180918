@@ -1,7 +1,7 @@
 export class ProductsApi{
     constructor() {
         const host = "https://murmuring-cove-73426.herokuapp.com/";
-        
+
         const doRequest = function (method, url, onSuccess, onError) {
             const request = new XMLHttpRequest();
             request.open(method, url);
