@@ -1,0 +1,35 @@
+.imageWrapper {
+    &__imageText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        
+        &__hidden {
+            display: none;
+        }
+    }
+
+    .imageWrapper {
+        position: relative;
+        width: 95%;
+        max-width: initial;
+        height: 400px;
+        max-height: initial;
+        display: flex;
+        padding: 0 0 25px 0;
+        overflow: hidden;
+        
+        &__image {
+            width: 100%;
+            object-fit: contain;
+            max-height: 100%;
+
+            &__hidden {
+                display: none;
+            }            
+        }        
+    }
+}

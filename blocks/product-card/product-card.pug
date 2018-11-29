@@ -1,3 +1,11 @@
-p.product-card
-    h5.product-card__title #{title}
-    span #{desc}
+div.productCard
+    div.pure-g
+        div.productCard__image.pure-u-3-4
+        div.pure-u-1-4
+            button.productCard__button.pure-button
+                = 'Заказать'
+            div.productCard__productPrice
+                span #{price}
+    div.productCard__productDescription
+        p(class='product__name') #{name}
+        p(class='product__description') #{about}

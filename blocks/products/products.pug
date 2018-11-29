@@ -1,4 +1,5 @@
 ul.products
     each item in items
-        li.products__item
-            p #{item.title} : #{item.desc}
+        li(class='products__item' data-guid=item.guid)
+            div.productCard__image
+            p(class='product__name') #{item.title}

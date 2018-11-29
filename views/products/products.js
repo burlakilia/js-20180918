@@ -1,54 +1,85 @@
-import { Products } from '../../blocks/products/products';
-import { ProductCard } from '../../blocks/product-card/product-card';
-import { View } from '../view';
-
+import {Products} from '../../blocks/products/products';
+import {ProductCard} from '../../blocks/product-card/product-card';
+import {View} from '../view';
+import _ from './products.scss';
 import template from './products.pug';
+import {Search} from "../../blocks/search/search";
+import {ProductsApi} from "../../core/productsApi";
 
-export class ProductsView extends View{
+export class ProductsView extends View {
+    constructor(el) {
+        super(el);
+        this.render();
 
-  constructor(el) {
-    super(el);
+        this.products = [];
+        this.currentProductGuid = undefined;
 
-    this.render();
+        this.search = new Search({
+            el: document.querySelector('.js-search')
+        });
+        this.search.render({});
 
-    this.products = new Products({
-      el: document.querySelector('.js-products')
-    });
+        this.productsBlock = new Products({
+            el: document.querySelector('.js-products')
+        });
 
-    this.card = new ProductCard({
-      el: document.querySelector('.js-product-card')
-    });
+        this.card = new ProductCard({
+            el: document.querySelector('.js-product-card'),
+            options: {}
+        });
+        this.card.render(undefined);
 
-    this.products.render({
-      items: [{
-        title: 'Xbox 360',
-        desc: 'Игровая приствка'
-      }, {
-        title: 'Nintendo Swtich',
-        desc: 'Гибридная'
-      }, {
-        title: 'Playstation 4',
-        desc: 'Игровая'
-      }]
-    });
+        this.productsBlock.onItemClick = (guid) => {
+            console.log(`Product id=${guid} clicked`);
+            this.currentProductGuid = guid;
+            this.showProductDetails(guid);
+        };
 
-    this.card.render({
-      title: 'Hello',
-      desc: 'world'
-    });
+        this.card.onPurchaseButtonClick = () => {
+            console.log('purchase button clicked');
+            parent.location.hash = `orders?productId=${this.currentProductGuid}`
+        };
 
-    this.products.onItemClick =  () => {
-      this.card.render({
-        title: 'Hello',
-        desc: '12345'
-      });
-    };
+        const that = this;
+        this.search.onSearch = (query) => {
+            console.log(`search for ${query}`);
+            const upperQuery = query.toLocaleUpperCase();
+            that.productsBlock.render({
+                items: that.products.filter(product => product.title.toLocaleUpperCase().indexOf(upperQuery) !== -1),
+                selectedProductId: this.currentProductGuid
+            });
+        };
 
-  }
+        this.productsApi = new ProductsApi();
+        this.productsApi.getProducts((products) => {
+            this.products = JSON.parse(products);
+            this.currentProductGuid = this.products.length > 0 ? this.products[0].guid : undefined;
+            this.productsBlock.render({
+                items: this.products,
+                selectedProductId: this.currentProductGuid
+            });
+            this.showProductDetails(this.currentProductGuid);
+        }, () => {
+            console.log("Error received!");
+        });
 
-  render() {
-    this.el.innerHTML = template();
-  }
+        // Show product card details.
+        this.showProductDetails = function (guid) {
+            if (guid) {
+                this.productsApi.getProductInfo(guid, (data) => {
+                    const productData = JSON.parse(data);
+                    this.card.render(productData);
+                }, () => {
+                    console.log("Error received!");
+                    this.card.render(undefined);
+                });
+            } else {
+                this.card.render(undefined);
+            }
+        };
+    }
 
-
+    render() {
+        this.el.innerHTML = template();
+    }
 }

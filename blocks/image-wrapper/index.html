@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Wrapper</title>
+
+    <script src="../../dist/bundle.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            let image = new window.ImageWrapper({
+                el: document.querySelector('.js-playground'),
+                options: {
+                    src: 'https://via.placeholder.com/800x600.png?text=Product Image',
+                    defaultImgSrc: 'https://via.placeholder.com/400x300.png?text=Default Image',
+                    loadingText: 'Загрузка...',
+                    errorText: 'Ошибка загрузки',
+                    altText: 'Изображение продукта',
+                    width: 400,
+                    height: 300
+                }
+            });
+            image.render();
+        });
+    </script>
+
+</head>
+<body>
+
+<div class="js-playground" style="height: 300px; width: 400px;"></div>
+
+</body>
+</html>
