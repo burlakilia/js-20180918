@@ -2,23 +2,23 @@
     position: relative;
     display: block;
     height: 1.5em;
-}
 
-.search-input::before{ 
-    content: "⌕";
-    position: absolute; 
-    top: -0.2em; 
-    left: 0.2em;
-    font-size: 1.6em;
-    color: gray;
-}
+    &::before{ 
+        content: "⌕";
+        position: absolute; 
+        top: -0.2em; 
+        left: 0.2em;
+        font-size: 1.6em;
+        color: gray;
+    }
 
-.search-input__input-field{
-    padding-left: 1.6em;
-    width: 100%;
-    height: 100%;
-    border-width: 1px;
-    border-color: lightgray;
-    border-style: solid;
-    font-size: 1em;
+    &__input-field{
+        padding-left: 1.6em;
+        width: 100%;
+        height: 100%;
+        border-width: 1px;
+        border-color: lightgray;
+        border-style: solid;
+        font-size: 1em;
+    }
 }
