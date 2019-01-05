@@ -1,6 +1,6 @@
 import { Component } from '../component';
 import template from './products.pug';
-import style from './products.scss';
+import _ from './products.scss';
 
 export class Products extends Component {
 
@@ -8,12 +8,14 @@ export class Products extends Component {
     super(data);
 
     this.el.addEventListener('click', () => {
-      console.log('21345');
+      this.onItemClick();
     })
   }
 
-  render() {
-    this.el.innerHTML = template(this.options);
+  render(data) {
+    this.el.innerHTML = template(data);
   }
+
+  onItemClick() {}
 
 }

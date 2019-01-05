@@ -9,8 +9,10 @@
     <script>
         window.addEventListener('DOMContentLoaded', function () {
           let button = new window.Products({
-            el: document.querySelector('.js-playground'),
-            options: {
+            el: document.querySelector('.js-playground') 
+          });
+
+          button.render({
               title: "Китайские товары",
               products: [{ 
                 name: "Фонарь HardWay", 
@@ -37,10 +39,7 @@
                 comment: "Нельзя предсказать какого цвета будут огни", 
                 description : "Нельзя предсказать какого цвета будут огни." 
               }]
-            }
-          });
-
-          button.render();
+            });
         });
     </script>
 

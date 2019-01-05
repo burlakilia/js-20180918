@@ -16,12 +16,11 @@
     <script>
         window.addEventListener('DOMContentLoaded', function () {
           let card = new ProductCard({
-            el: document.querySelector('.js-playground'),
-            options: {
-              text: 'Заказать'
-            }
+            el: document.querySelector('.js-playground')
           });
-          card.render();
+          card.render({
+              text: 'Заказать'
+            });
         });
     </script>
 

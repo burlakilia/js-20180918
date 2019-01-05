@@ -16,10 +16,11 @@
             }
           });
 
+          search.onSearch = (searchString) => {
+            console.log("searching", searchString);
+          };
           search.render();
         });
-
-        window.addEventListener("search", e => console.log("searching", e.detail));
     </script>
 
 </head>

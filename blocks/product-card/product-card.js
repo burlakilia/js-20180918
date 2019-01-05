@@ -1,5 +1,6 @@
 import { Component } from '../component';
-import style from './product-card.scss';
+import template from './product-card.pug';
+import _ from './product-card.scss';
 
 export class ProductCard extends Component {
 
@@ -7,9 +8,11 @@ export class ProductCard extends Component {
     super(data);
   }
 
-  render() {
+  render(data) {
 
-    this.el.innerHTML = `
+    this.el.innerHTML = template(data);
+
+ /*   this.el.innerHTML = `
       <div class="card">
 <img class="card__image" src="image/1514327576551096128.JPG">
 <div class=card__list">
@@ -20,7 +23,7 @@ export class ProductCard extends Component {
     <a href="" class="card__button">Заказать</a>
 </div>
 </div>
-    `;
+    `;*/
 
   }
 
