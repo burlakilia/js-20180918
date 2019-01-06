@@ -11,11 +11,11 @@ export class ProductsView extends View {
         this.render();
 
         this.products = new Products({
-            el: document.querySelector('.js-products') 
+            el: this.el.querySelector('.js-products') 
         });
 
         this.card = new ProductCard({
-                el: document.querySelector('.js-product-card')
+                el: this.el.querySelector('.js-product-card')
             });
 
         this.products.render({
