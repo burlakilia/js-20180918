@@ -2,13 +2,20 @@ import { Products } from "../../blocks/products/products";
 import { ProductCard } from "../../blocks/product-card/product-card";
 import template from "./products.pug";
 import { View } from "../view";
+import { SearchInput } from "../../blocks/search-input/search-input";
 
 export class ProductsView extends View {
 
-    constructor(el) {
+    constructor(el, productsData) {
 
         super(el);
+        productsData = productsData || [];
+
         this.render();
+
+        this.search = new SearchInput({
+            el: this.el.querySelector('.js-search') 
+        })
 
         this.products = new Products({
             el: this.el.querySelector('.js-products') 
@@ -18,46 +25,30 @@ export class ProductsView extends View {
                 el: this.el.querySelector('.js-product-card')
             });
 
-        this.products.render({
-            title: "Китайские товары",
-            products: [{ 
-              name: "Фонарь HardWay", 
-              picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
-              price: "$100", 
-              comment: "Для тех, кто не любит простых путей!", 
-              description : "Для тех, кто не любит простых путей! Кнопка включения утоплена в корпус, чтобы ее можно было нажать только мизиньчиком. Батарейки можно засунуть в батарейный отсек, но чтобы вынуть, фонарь придется разобрать. После включения светит, если потрясти." 
-            }, { 
-              name: "Триногие брюки", 
-              picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
-              price: "$300", 
-              comment: "Три штанины по цене двух", 
-              description: "Вы родились в Чернобыле? Не беда, для вас триногие брюки. Подходит и не только для мутантов. Третью штанину можно использовать прозапас - на случай если одна из двух порвется." 
-            }, { 
-              name: "Инновационная поилка-тренажер", 
-              picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
-              price: "$40", 
-              comment: "С интегрированной соломинкой", 
-              description : "Объем 0.5л, имеет интегрированную соломинку. Вода через последнюю идет с трудом, не говоря уже о смузи, так что ваш рот упражняется, высасывая содержимое. Позволяет убрать тройной подбородок." 
-            }, { 
-              name: "Гирлянда-угадайка", 
-              picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
-              price: "$65.50", 
-              comment: "Нельзя предсказать какого цвета будут огни", 
-              description : "Нельзя предсказать какого цвета будут огни." 
-            }]
-          });
+        this.search.render();
 
-        this.card.render({
-            title: 'Hello',
-            desc: 'world'
-        });
+        this.search.onSearch = searchString => { console.log(searchString); };
 
-        this.products.onItemClick = () => {
-            this.card.render({
-                title: 'Hello',
-                desc: '12345'
-            });
+        this.products.render(productsData);
+
+        this.products.onItemClick = productId => {
+            this.card.render(productsData.filter(product => product.guid === productId)[0]);
         };
+        debugger;
+        if (productsData[0])
+        {
+            this.products.select(productsData[0].guid);
+        }
+        else
+        {
+            this.card.render({
+                guid: "5bf82af5dc258c5e3e642067",
+                picture: "https://picsum.photos/200/300?image=100",
+                title: "nisi ut",
+                description: "12345",
+                price: "$99.99"
+            });
+        }
     }
 
     render() {

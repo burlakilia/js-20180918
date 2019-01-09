@@ -1,3 +1,7 @@
-p.product-card
-    h5.product-card__title #{title}
-    span #{desc}
+div.product-card(data-id=guid)
+    img.product-card__image(src=picture)
+    div.product-card__info
+        h5.product-card__title #{title}
+        h5.product-card__price #{price}
+        button.product-card__button Заказать
+    div.product-card__description #{description}
