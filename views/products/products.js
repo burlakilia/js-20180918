@@ -34,7 +34,7 @@ export class ProductsView extends View {
         this.products.onItemClick = productId => {
             this.card.render(productsData.filter(product => product.guid === productId)[0]);
         };
-        debugger;
+
         if (productsData[0])
         {
             this.products.select(productsData[0].guid);
