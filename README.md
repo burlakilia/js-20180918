@@ -4,7 +4,7 @@
 
 На GitHub Pages: 
 
-https://rh77.github.io/js-20180918/blocks/
+https://rh77.github.io/js-20180918/
 
 https://rh77.github.io/js-20180918/blocks/search-input/
 
