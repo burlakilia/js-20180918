@@ -2,7 +2,7 @@ import { Component } from '../component';
 import template from './products.pug';
 import _ from './products.scss';
 
-const modifierSelected = "products__item_selected";
+const modifierSelected = "selected";
 
 export class Products extends Component {
 

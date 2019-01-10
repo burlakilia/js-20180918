@@ -4,13 +4,41 @@
     <meta charset="UTF-8">
     <title>Catalog</title>
     <script src="./dist/bundle.js"></script>
+    <style>
+        .total-wrapper {
+            width: 100%;
+            min-width: 800px;
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+        }
+
+        .footer {
+            margin: -100px auto 0;
+            min-width: 800px;
+            height: 100px;
+            position: relative;
+        }
+
+        .middle {
+            width: 100%;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello world</h1>
-
-    <a href="#orders">Перейти к заказу</a>
-    <div class="js-products-view" hidden="hidden"></div>
-    <div class="js-order-view" hidden="hidden"></div>
-
+    <div class="total-wrapper">
+        <header class="header">
+            <h1>Hello world</h1>
+            <a href="#orders">Перейти к заказу</a>
+        </header>
+        <div class="middle">
+            <div class="js-products-view" hidden="hidden"></div>
+            <div class="js-order-view" hidden="hidden"></div>
+        </div>
+    </div>
+    <footer class=".footer">
+        <span>Catalog 2018</span>
+    </footer>
 </body>
 </html>

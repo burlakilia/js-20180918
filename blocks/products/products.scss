@@ -1,29 +1,36 @@
 .products {
-    margin: 0;
+    display: block;   
     padding: 0;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &__item {
         display: flex;
         justify-content: space-between;
         cursor: pointer;
-        width: 100%;
-        border: 1px solid #000;
-        border-bottom: none;
+        background-color: aliceblue;
         padding: 10px;
+        margin: 10px;
+        margin-bottom: 0;
         transition: background-color .2s ease;
     
         &:last-child {
-            border-bottom: 1px solid #000;
+            margin-bottom: 10px;
         }
     
-        &_selected,
+        &.selected {
+            background-color: rgb(218, 230, 240);
+        }
+
         &:hover {
             background-color: #ccc;
         }
     }
 
     &__item-img-wrapper {
-        width: 48%;
+        display: inline-block;
+        width: 50%;
     }
     
     &__item-img {
@@ -31,7 +38,8 @@
     }
     
     &__item-description-wrapper {
-        width: 48%;
+        display: inline-block;
+        width: 50%;
     }
     
     &__item-title {

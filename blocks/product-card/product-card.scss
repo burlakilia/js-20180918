@@ -6,8 +6,7 @@
   transition: .4s linear;
 
   &__image {
-    display: block;
-    width: 100%;
+    display: inline-block;
   }
 
   &__info {

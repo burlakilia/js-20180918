@@ -3,6 +3,7 @@ import { ProductCard } from "../../blocks/product-card/product-card";
 import template from "./products.pug";
 import { View } from "../view";
 import { SearchInput } from "../../blocks/search-input/search-input";
+import _ from "./products.scss";
 
 export class ProductsView extends View {
 
