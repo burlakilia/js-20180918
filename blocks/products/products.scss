@@ -1,7 +1,9 @@
 .products {
     display: block;   
-    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 100%;
+    position: relative;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -30,7 +32,7 @@
 
     &__item-img-wrapper {
         display: inline-block;
-        width: 50%;
+        width: 48%;
     }
     
     &__item-img {
@@ -39,7 +41,7 @@
     
     &__item-description-wrapper {
         display: inline-block;
-        width: 50%;
+        width: 48%;
     }
     
     &__item-title {

@@ -5,6 +5,7 @@ import { Router } from './router';
 
 import { ProductsView } from './views/products/products';
 import { OrderView } from './views/order/order';
+import { LoaderView } from './views/loader/loader';
 
 window.Products = Products;
 window.ProductCard = ProductCard;
@@ -19,10 +20,10 @@ function start(products) {
         window.location.hash = startPage;
     }
 
-    const router = new Router();
     const productsView = new ProductsView(document.querySelector(".js-products-view"), products);
     const orderView = new OrderView(document.querySelector(".js-order-view"));
 
+    const router = new Router();
     router.register("products", productsView);
     router.register("orders", orderView);
 
@@ -30,6 +31,9 @@ function start(products) {
 }
 
 function queryProducts() {
+  
+    let loaderView = new LoaderView(document.querySelector(".js-loader-view"));
+    loaderView.show();
 
     let request = new XMLHttpRequest();
 
@@ -38,18 +42,33 @@ function queryProducts() {
     //2 - отправлен заголовок запроса
     //3 - начал получать ответ
     //4 - ответ от сервера
+        if (request.readyState != 4) return;
         
-        if (request.readyState === 4) {
-            let products = JSON.parse(request.responseText);
+      //  loaderView.hide();
+        if (request.status == 200) {
+            let products;
+            try
+            {
+                products = JSON.parse(request.responseText);
+            }
+            catch(e) 
+            {
+                alert(e.message);
+            }
+
             products.forEach(product => {
                 product.description = description;
                 product.price = "$" + (Math.random() * 100).toFixed(2);
             });
-            start(products);
+          //  start(products);
+        }
+        else
+        {
+            alert(requesr.status + ":" + request.statusText);
         }
     });
 
-    request.open('GET', 'https://murmuring-cove-73426.herokuapp.com/products/?limit=5&offset=5&filter=nisi');
+    request.open('GET', 'https://murmuring-cove-73426.herokuapp.com/products/?limit=5&offset=5&filter=nisi', true);
     request.send();
 }
 

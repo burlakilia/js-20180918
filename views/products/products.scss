@@ -1,5 +1,14 @@
+$list-width: 250px;
+
+.products-view {
+    float: left;
+    width: 100%;
+    padding: 0 0 100px;
+    overflow: hidden;
+}
+
 .products-list {
-    width: 250px;
+    width: $list-width;
     float: left;
     position: relative;
     margin-left: -100%;
@@ -14,11 +23,9 @@
 
 .js-products {
     display: block;
+    height: 700px;
 }
 
-.product-content {
-    float: left;
-    width: 100%;
-    padding: 0 0 100px;
-    overflow: hidden;
+.js-product-card {
+    padding-left: $list-width;
 }
