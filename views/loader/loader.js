@@ -1,11 +1,13 @@
-import template from "./order.pug";
 import { View } from "../view";
+import template from "./loader.pug";
+import _ from "./loader.scss";
 
-export class OrderView extends View{
+export class LoaderView extends View {
 
     constructor(el) {
 
         super(el);
+        
         this.render();
     }
 

@@ -1,15 +1,14 @@
 export class View {
 
-  constructor(el) {
-    this.el = el;
-  }
+    constructor(el) {
+        this.el = el;
+    }
 
-  show() {
-    this.el.hidden = false;
-  }
+    show() {
+        this.el.hidden = false;
+    }
 
-  hide() {
-    this.el.hidden = true;
-  }
-
+    hide() {
+        this.el.hidden = true;
+    }   
 }

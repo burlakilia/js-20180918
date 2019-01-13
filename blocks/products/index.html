@@ -8,23 +8,38 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-          let button = new window.Products({
-            el: document.querySelector('.js-playground'),
-            options: {
-              items: [{
-                title: 'Xbox 360',
-                desc: 'Игровая приствка'
-              }, {
-                title: 'Nintendo Swtich',
-                desc: 'Гибридная'
-              }, {
-                title: 'Playstation 4',
-                desc: 'Игровая'
-              }]
-            }
+          let products = new Products({
+            el: document.querySelector('.js-playground') 
           });
 
-          button.render();
+          products.render({
+              title: "Китайские товары",
+              products: [{ 
+                name: "Фонарь HardWay", 
+                picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
+                price: "$100", 
+                comment: "Для тех, кто не любит простых путей!", 
+                description : "Для тех, кто не любит простых путей! Кнопка включения утоплена в корпус, чтобы ее можно было нажать только мизиньчиком. Батарейки можно засунуть в батарейный отсек, но чтобы вынуть, фонарь придется разобрать. После включения светит, если потрясти." 
+              }, { 
+                name: "Триногие брюки", 
+                picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
+                price: "$300", 
+                comment: "Три штанины по цене двух", 
+                description: "Вы родились в Чернобыле? Не беда, для вас триногие брюки. Подходит и не только для мутантов. Третью штанину можно использовать прозапас - на случай если одна из двух порвется." 
+              }, { 
+                name: "Инновационная поилка-тренажер", 
+                picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
+                price: "$40", 
+                comment: "С интегрированной соломинкой", 
+                description : "Объем 0.5л, имеет интегрированную соломинку. Вода через последнюю идет с трудом, не говоря уже о смузи, так что ваш рот упражняется, высасывая содержимое. Позволяет убрать тройной подбородок." 
+              }, { 
+                name: "Гирлянда-угадайка", 
+                picture: "http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/dedfafbda01d0f6cf8a056b10b74f54c.jpg", 
+                price: "$65.50", 
+                comment: "Нельзя предсказать какого цвета будут огни", 
+                description : "Нельзя предсказать какого цвета будут огни." 
+              }]
+            });
         });
     </script>
 

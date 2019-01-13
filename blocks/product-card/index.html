@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Button</title>
+    <title>ProductCard</title>
 
     <script src="../../dist/bundle.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-          let button = new window.Button({
-            el: document.querySelector('.js-playground'),
-            options: {
-              text: 'Заказать'
-            }
+          let card = new ProductCard({
+            el: document.querySelector('.js-playground')
           });
-
-          button.render();
+          card.render({
+            guid: "5bf82af5dc258c5e3e642067",
+            picture: "https://picsum.photos/200/300?image=100",
+            title: "nisi ut"
+          });
         });
     </script>
 

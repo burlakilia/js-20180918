@@ -1,3 +1,7 @@
-p.product-card
-    h5.product-card__title #{title}
-    span #{desc}
+div.product-card(data-id=guid)
+    img(class="product-card__image js-replace-image" data-src=picture)
+    span.product-card__info
+        h5.product-card__title #{title}
+        h5.product-card__price #{price}
+        button(class="product-card__button ui pink button") #{buttonText}
+    span.product-card__description #{description}

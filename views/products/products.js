@@ -1,54 +1,58 @@
-import { Products } from '../../blocks/products/products';
-import { ProductCard } from '../../blocks/product-card/product-card';
-import { View } from '../view';
+import { Products } from "../../blocks/products/products";
+import { ProductCard } from "../../blocks/product-card/product-card";
+import template from "./products.pug";
+import { View } from "../view";
+import { SearchInput } from "../../blocks/search-input/search-input";
+import _ from "./products.scss";
 
-import template from './products.pug';
+export class ProductsView extends View {
 
-export class ProductsView extends View{
+    constructor(el, productsData) {
 
-  constructor(el) {
-    super(el);
+        super(el);
+        productsData = productsData || [];
 
-    this.render();
+        this.render();
 
-    this.products = new Products({
-      el: document.querySelector('.js-products')
-    });
+        this.search = new SearchInput({
+            el: this.el.querySelector('.js-search') 
+        })
 
-    this.card = new ProductCard({
-      el: document.querySelector('.js-product-card')
-    });
+        this.products = new Products({
+            el: this.el.querySelector('.js-products') 
+        });
 
-    this.products.render({
-      items: [{
-        title: 'Xbox 360',
-        desc: 'Игровая приствка'
-      }, {
-        title: 'Nintendo Swtich',
-        desc: 'Гибридная'
-      }, {
-        title: 'Playstation 4',
-        desc: 'Игровая'
-      }]
-    });
+        this.card = new ProductCard({
+                el: this.el.querySelector('.js-product-card')
+            });
+            
+        this.search.onSearch = searchString => { this.products.search(searchString); };
 
-    this.card.render({
-      title: 'Hello',
-      desc: 'world'
-    });
+        this.search.render();
 
-    this.products.onItemClick =  () => {
-      this.card.render({
-        title: 'Hello',
-        desc: '12345'
-      });
-    };
+        this.products.render(productsData);
 
-  }
+        this.products.onItemClick = productId => {
+            this.card.render(productsData.filter(product => product.guid === productId)[0]);
+        };
 
-  render() {
-    this.el.innerHTML = template();
-  }
+        if (productsData[0])
+        {
+            this.products.select(productsData[0].guid);
+        }
+        else
+        {
+            this.card.render({
+                guid: "5bf82af5dc258c5e3e642067",
+                picture: "https://picsum.photos/200/300?image=100",
+                title: "nisi ut",
+                description: "12345",
+                price: "$99.99"
+            });
+        }
+    }
 
-
+    render() {
+        this.el.innerHTML = template();
+    }
 }

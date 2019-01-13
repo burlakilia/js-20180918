@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search input</title>
+
+    <script src="../../dist/bundle.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+          let search = new SearchInput({
+            el: document.querySelector('.js-playground'),
+            options: {
+              placeHolder: 'Поиск',
+              ariaLabel: 'Поиск по каталогу'
+            }
+          });
+
+          search.onSearch = (searchString) => {
+            console.log("searching", searchString);
+          };
+          search.render();
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="js-playground"></div>
+
+</body>
+</html>

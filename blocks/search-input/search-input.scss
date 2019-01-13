@@ -1,0 +1,26 @@
+.search-input {   
+    position: relative;
+    display: block;
+    height: 1.5em;
+
+    &::before{ 
+        content: "⌕";
+        position: absolute; 
+        top: -0.2em; 
+        left: 0.2em;
+        font-size: 1.6em;
+        color: black;
+    }
+
+    &__input-field{
+        padding-left: 1.6em;
+        width: 100%;
+        height: 100%;
+        border-width: 2px;
+        border-color: rgb(28, 110, 53);
+        border-style: solid;
+        border-radius: 5px;
+        font-size: 1em;
+        outline: none;
+    }
+}
