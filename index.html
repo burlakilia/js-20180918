@@ -5,20 +5,26 @@
     <title>Catalog</title>
     <script src="./dist/bundle.js"></script>
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 </head>
 <body>
-    <div class="total-wrapper">
-        <header class="header">
-            <div class="title"><h1 class="title__text">Catalog</h1></div><div class="title-nav"><a class="title-nav__orders" href="#orders">Перейти к заказу</a></div>
-        </header>
-        <div class="middle">
-            <div class="js-products-view" hidden="hidden"></div>
-            <div class="js-order-view" hidden="hidden"></div>
-            <div class="js-loader-view" hidden="hidden"></div>
+    <div class="app">
+        <div class="lt-grid-container">
+            <div class="lt-Header">
+                <div class="title">
+                    <h1 class="title__text">Catalog</h1>
+                </div>
+                <div class="title-nav">
+                    <a class="title-nav__orders" href="#orders">View order</a>
+                </div>
+            </div>
+            <div class="lt-Main">
+                <div class="js-products-view" hidden="hidden"></div>
+                <div class="js-order-view" hidden="hidden"></div>
+                <div class="js-loader-view" hidden="hidden"></div>
+            </div>
+            <div class="lt-Footer"><span>Catalog 2018</span></div>
         </div>
     </div>
-    <footer class="footer">
-        <span>Catalog 2018</span>
-    </footer>
 </body>
 </html>

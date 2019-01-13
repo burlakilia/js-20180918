@@ -1,7 +1,8 @@
 div.product-card(data-id=guid)
-    img.product-card__image(src=picture)
-    div.product-card__info
-        h5.product-card__title #{title}
-        h5.product-card__price #{price}
-        button.product-card__button Заказать
+    div.product-card__image-info
+        img(class="product-card__image js-replace-image ui image" data-src=picture)
+        div.product-card__info
+            h5.product-card__title #{title}
+            h5.product-card__price #{price}
+            button(class="product-card__button ui pink button") #{buttonText}
     div.product-card__description #{description}

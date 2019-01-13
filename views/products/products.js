@@ -25,10 +25,10 @@ export class ProductsView extends View {
         this.card = new ProductCard({
                 el: this.el.querySelector('.js-product-card')
             });
+            
+        this.search.onSearch = searchString => { this.products.search(searchString); };
 
         this.search.render();
-
-        this.search.onSearch = searchString => { console.log(searchString); };
 
         this.products.render(productsData);
 

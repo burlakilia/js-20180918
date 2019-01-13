@@ -25,5 +25,5 @@ export class SearchInput extends Component {
     this.input.addEventListener("input", e => this.onSearch(this.input.value));
   }
 
-  onSearch(searchString) {}
+  onSearch(searchString) { }
 }

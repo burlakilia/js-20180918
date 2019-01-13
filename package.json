@@ -1,7 +1,7 @@
 {
   "name": "js-20180918",
   "version": "0.1.0",
-  "description": "Stundes catalog",
+  "description": "Catalog",
   "main": "index.js",
   "scripts": {
     "dev": "static ./",
@@ -9,19 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/burlakilia/js-20180918.git"
+    "url": "git+https://github.com/rh77/js-20180918.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/burlakilia/js-20180918/issues"
+    "url": "https://github.com/rh77/js-20180918/issues"
   },
-  "homepage": "https://github.com/burlakilia/js-20180918#readme",
+  "homepage": "https://github.com/rh77/js-20180918#readme",
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.0",
+    "file-loader": "^3.0.1",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.0.3",
     "scss": "^0.2.4",

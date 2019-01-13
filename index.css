@@ -1,67 +1,91 @@
-.total-wrapper {
-    width: 100%;
-    min-width: 800px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    bottom: 100px;
-    left: 0px;
-    background-color: rgb(228, 255, 246);
+.app {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color:aquamarine;
 }
-
-.footer {
-    min-width: 800px;
+  
+  .lt-grid-container {
+    display: grid;
+    grid-template-columns: 1fr [Footer];
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: "lt-Header" "lt-Main" "lt-Footer";
+    height: 100%;
     width: 100%;
+  }
+  
+  .lt-Header { 
+    grid-area: lt-Header;
     height: 100px;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+  }
+  
+  .lt-Main {
+    grid-area: lt-Main;
+    height: calc(100vh - 200px);
+  }
+  
+  .lt-Footer {
+    grid-area: lt-Footer; 
+    height: 100px;
     background-color: blueviolet;
-}
-
-.header {
-    width: 100%;
-    height: 100px;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    display: block;
-}
-
-.middle {
-    width: 100%;
-    position: relative;
-    top: 0px;
-    left: 0px;
-}
+  }
+  
+  @media all and (-ms-high-contrast:none) {
+    .lt-grid-container {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr [Footer];
+      -ms-grid-rows: 100px 1fr 100px;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .lt-Header {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-col: 1;
+      -ms-grid-col-span: 1;
+      height: 100px;
+    }
+  
+    .lt-Main {
+      display: -ms-grid;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+      -ms-grid-col: 1;
+      -ms-grid-col-span: 1;
+      height: calc(100% - 200px);
+    }
+  
+    .lt-Footer {
+      -ms-grid-row: 3;
+      -ms-grid-row-span: 1;
+      -ms-grid-col: 1;
+      -ms-grid-col-span: 1;
+      height: 100px;
+    } 
+  }
 
 .title {
-    position: absolute;
-    top: 0px;
-    left:0px;
+    display: inline-block;
     width: 47%;
     height: 100%;
-    padding: 1%;
 }
 
 .title__text {
-    position: absolute;
+    position: relative;
     margin-top: -0.625em;
     top: 50%;
     left: 10%;
 }
 
 .title-nav {
+    display: inline-block;
     width: 47%;
     height: 100%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    padding: 1%;
 }
 
 .title-nav__orders {
-    position: absolute;
+    position: relative;
     margin-top: -0.625em;
     top: 50%;
     right: 10%;

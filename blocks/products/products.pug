@@ -1,8 +1,8 @@
 ul.products
     each item in products
-        li.products__item(data-id=item.guid)
+        li(class="products__item js-search-item" data-id=item.guid)
             div.products__item-img-wrapper
-                img(class="products__item-img" src=item.picture)
+                img(class="products__item-img js-replace-image" data-src=item.picture)
             div.products__item-description-wrapper
                 p.products__item-title #{item.title}
                 p.products__item-price #{item.price}

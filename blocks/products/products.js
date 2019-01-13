@@ -1,6 +1,7 @@
 import { Component } from '../component';
 import template from './products.pug';
 import _ from './products.scss';
+import { ImageHelper } from '../image-helper';
 
 const modifierSelected = "selected";
 
@@ -16,13 +17,24 @@ export class Products extends Component {
       {
         this._unselectAll();
         clickedProduct.classList.add(modifierSelected);       
-        this.onItemClick(+clickedProduct.dataset.id);
+        this.onItemClick(clickedProduct.dataset.id);
       }
-    })
+    });
   }
 
   render(products) {
     this.el.innerHTML = template({ products: products });
+
+    ImageHelper.replaceImages();
+  }
+  
+  onItemClick(productId) {}
+
+  search(query) {
+
+    query = query && query.toLowerCase() || "";
+    let items = this.el.querySelectorAll(".js-search-item");
+    items.forEach(item => item.hidden = item.textContent.toLowerCase().indexOf(query) < 0);
   }
 
   select(productId) {
@@ -41,7 +53,4 @@ export class Products extends Component {
       selectedElement.classList.remove(modifierSelected);
     }
   }
-
-  onItemClick(productId) {}
-
 }

@@ -1,31 +1,63 @@
 $list-width: 250px;
 
-.products-view {
-    float: left;
-    width: 100%;
-    padding: 0 0 100px;
-    overflow: hidden;
+.lt-Main-Content {
+    display: grid;
+    grid-template-columns: $list-width 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "lt-Product-List lt-Product-Card";
+    grid-area: lt-Main-Content;
+}
+  
+.lt-Product-List { 
+    grid-area: lt-Product-List;
+    padding-right: 10px; 
+}
+  
+.lt-Product-Card {
+    grid-area: lt-Product-Card; 
+    background-color: rgb(51, 153, 93);
+    overflow: auto;
 }
 
-.products-list {
-    width: $list-width;
-    float: left;
-    position: relative;
-    margin-left: -100%;
-    padding: 0;
+@media all and (-ms-high-contrast:none) {
+  
+    .lt-Main-Content {
+      display: -ms-grid;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+      -ms-grid-col: 1;
+      -ms-grid-col-span: 1;
+    }
+  
+    .lt-Product-List {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-col: 1;
+      -ms-grid-col-span: 1;
+    }
+  
+    .lt-Product-Card {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-col: 2;
+      -ms-grid-col-span: 1;
+    }
 }
 
-.js-search { 
-    display: block;
-    padding: 10px;
-    padding-bottom: 0;
+.js-search {
+    margin:0;
+    padding-left: 10px;
+    height: 35px;
 }
 
-.js-products {
-    display: block;
-    height: 700px;
+.js-products {  
+    overflow-y: auto;
+    overflow-x: hidden; 
+    height: calc(100vh - 200px - 35px - 10px);
+    padding-bottom: 10px;
 }
 
 .js-product-card {
-    padding-left: $list-width;
+    height: calc(100vh - 200px);
+    padding: 0;
 }

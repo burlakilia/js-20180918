@@ -44,7 +44,7 @@ function queryProducts() {
     //4 - ответ от сервера
         if (request.readyState != 4) return;
         
-      //  loaderView.hide();
+        loaderView.hide();
         if (request.status == 200) {
             let products;
             try
@@ -60,7 +60,7 @@ function queryProducts() {
                 product.description = description;
                 product.price = "$" + (Math.random() * 100).toFixed(2);
             });
-          //  start(products);
+            start(products);
         }
         else
         {
