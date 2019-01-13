@@ -27,7 +27,6 @@
   .lt-Footer {
     grid-area: lt-Footer; 
     height: 100px;
-    background-color: blueviolet;
   }
   
   @media all and (-ms-high-contrast:none) {
