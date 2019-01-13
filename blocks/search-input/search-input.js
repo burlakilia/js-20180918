@@ -22,8 +22,41 @@ export class SearchInput extends Component {
 
     this.input = this.el.querySelector("input");
 
-    this.input.addEventListener("input", e => this.onSearch(this.input.value));
+    let throttledSearchFunc = SearchInput._throttle(this._onSearch, 1000);
+    this.input.addEventListener("input", e => throttledSearchFunc.call(this, this.input.value));
   }
 
   onSearch(searchString) { }
+
+  _onSearch(searchString) {
+    this.onSearch(searchString);
+  }
+
+  static _throttle(func, timeout) {
+
+    let isThrottled = false;
+    let _args;
+    let _this;
+  
+    return function _throttledFunction() {
+
+      if (isThrottled) { 
+        _args = arguments;
+        _this = this;
+        return;
+      }
+  
+      func.apply(this, arguments);
+  
+      isThrottled = true;
+  
+      setTimeout(function() {
+        isThrottled = false;
+        if (_this) {
+          _throttledFunction.apply(_this, _args);
+          _args = _this = null;
+        }
+      }, timeout);
+    };
+  }
 }
